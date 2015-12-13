@@ -1,0 +1,45 @@
+<!DOCTYPE html> 
+<html>
+	<head>
+	<meta charset="UTF-8">
+		<style>
+			.grid {
+				border: 1px solid;
+				min-width: 60px;
+				min-height: 60px;
+				display: inline-block;
+				background: #FF0;
+			}
+			#exercise {
+				width: 1000px; 
+				min-height: auto; 
+				border: 1px solid;
+			}
+			.hover {
+				background: #000;
+			}
+		</style>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script type="text/javascript">
+			function addGrid(){
+				var input = prompt("What grid size would you like?");
+				var n1 = input * input;
+				$(".grid").removeClass("hover")
+				for(var x=1; x<=n1; x++){
+					$('<div></div>').addClass('grid').appendTo($('#exercise'));
+				}
+				$('.grid').hover(function(){ $(this).addClass('hover') });
+			}
+			document.addEventListener("DOMContentLoaded", function(event){
+				
+			});
+		</script>
+	</head>
+	<body>
+	<button onclick="addGrid()">Start over</button>
+		<div id="exercise">
+
+		</div>
+	</body>
+
+</html> 
